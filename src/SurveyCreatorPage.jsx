@@ -4,6 +4,8 @@ import 'survey-core/survey-core.css';
 import 'survey-creator-core/survey-creator-core.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
+import { FaRegEye } from 'react-icons/fa';
+import { IoSaveOutline } from 'react-icons/io5';
 
 const defaultCreatorOptions = {
   autoSaveEnabled: true,
@@ -91,10 +93,12 @@ const SurveyCreatorPage = () => {
           />
         </div>
         <div className="flex flex-wrap gap-2">
-          <button onClick={() => navigate('/forms')} className="px-4 py-2 bg-slate-600 text-white rounded-md">
+          <button onClick={() => navigate('/forms')} className="flex items-center gap-2 px-4 py-2 bg-slate-600 text-white rounded-md">
+            <FaRegEye />
             View Forms
           </button>
-          <button onClick={handleSave} className="px-4 py-2 bg-blue-600 text-white rounded-md">
+          <button onClick={handleSave} className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md">
+            <IoSaveOutline />
             Save Survey
           </button>
         </div>

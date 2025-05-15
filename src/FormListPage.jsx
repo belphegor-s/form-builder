@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoArrowBack } from 'react-icons/io5';
+import { FaPlus } from 'react-icons/fa6';
 
 const FormListPage = () => {
   const [forms, setForms] = useState({});
@@ -36,10 +37,16 @@ const FormListPage = () => {
     <div className="p-6">
       <div className="flex items-center gap-4 flex-wrap justify-between mb-4">
         <h1 className="text-2xl font-bold">Saved Forms</h1>
-        <button onClick={() => navigate('/')} className="flex items-center gap-2 px-4 py-2 bg-slate-600 text-white rounded-md cursor-pointer">
-          <IoArrowBack />
-          Back Home
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button onClick={() => navigate('/')} className="flex items-center gap-2 px-4 py-2 bg-slate-600 text-white rounded-md cursor-pointer">
+            <IoArrowBack />
+            Back Home
+          </button>
+          <button onClick={() => navigate(`/forms/create/${crypto.randomUUID()}`)} className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md cursor-pointer">
+            <FaPlus />
+            Create
+          </button>
+        </div>
       </div>
       <div className="grid gap-4">
         {Object.keys(forms).length === 0 && <p className="text-center">No forms found</p>}

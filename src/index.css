@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+.svc-creator__banner {
+  @apply !hidden;
+}
+
+button {
+  cursor: pointer;
+}

@@ -69,7 +69,7 @@ const SurveyCreatorPage = () => {
       if (creator.JSON) {
         handleSave(false);
       }
-    }, 2.5 * 1000);
+    }, 1 * 1000);
 
     return () => clearInterval(interval);
   }, [creator, handleSave]);
